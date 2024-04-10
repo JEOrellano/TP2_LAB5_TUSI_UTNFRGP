@@ -19,6 +19,21 @@ public class Email {
         return matcher.matches();
     }
 	
+	
+	
+
+	
+	public static boolean validarCorreoAlMenosUnNumero_retornaTrue(String correo) {
+        String regex = ".*\\d+.*";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.find();
+    }
+	
+	
+	
+	
+	
 	@Override
 	public String toString() {
 		return "Email [correo=" + correo + "]";
