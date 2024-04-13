@@ -11,22 +11,24 @@ import frgp.utn.edu.ar.entidad.Email;
 class EmailTest {
 	private String testCorreo;
 
-	
 	@Test
 	public void testValidarCorreo_almenosUnaMayuscula() {
 		this.testCorreo = "Correo1@email.com";
-		assertEquals(true,Email.validarCorreo(testCorreo), "correo invalido almenos una mayuscula");
+		assertEquals(true, Email.validarCorreo(testCorreo), "correo invalido almenos una mayuscula");
 	}
+
 	@Test
 	public void testValidarCorreo_AlMenosUnNumero() {
-		
-		this.testCorreo= "9correo@email.com";
+
+		this.testCorreo = "9correo@email.com";
 		assertTrue(Email.validarCorreoAlMenosUnNumero_retornaTrue(testCorreo), "No incluye al menos un numero");
-				
-		
-		}
-	
-	
+
+	}
+
+	@Test
+	public void testValidarCorreo_almenosUnaMinuscula() {
+		this.testCorreo = "Correo1@email.com";
+		assertEquals(true, Email.validarMinuscula(testCorreo), "correo invalido al menos una minuscula");
+	}
 
 }
- 
