@@ -46,6 +46,12 @@ class EmailTest {
 		
 		
 	}
+	
+	@Test
+    public void testValidarCorreo_AlMenosUnCaracterAlfanumerico() {
+        Email email = new Email("correo33@email.com");
+        assertTrue(email.validarUnCaracterAlfanumerico(), "El correo no contiene al menos un carácter alfanumérico");
+    }
 
 	@Test 
 	public void validarCorreoEmpieceConUnNumero () {
