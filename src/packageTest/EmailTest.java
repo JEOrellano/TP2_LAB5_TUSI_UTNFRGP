@@ -24,6 +24,12 @@ class EmailTest {
 		assertTrue(Email.validarCorreoAlMenosUnNumero_retornaTrue(testCorreo), "No incluye al menos un numero");
 
 	}
+	@Test
+	public void testValidarCorreo_Logitud() {
+		this.testCorreo = "1234567@email.com";
+		assertTrue(Email.validarLongitud(testCorreo), "No tiene el minimo de 8 caracteres antes del arroba");
+
+	}
 
 	@Test
 	public void testValidarCorreo_almenosUnaMinuscula() {

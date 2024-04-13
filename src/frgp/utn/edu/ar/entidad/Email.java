@@ -30,6 +30,12 @@ public class Email {
 		Matcher matcher = pattern.matcher(correo);
 		return matcher.find();
 	}
+    public static boolean validarLongitud(String correo) {
+        String regex = ".{8,}@.*"; 
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
+    }
 	@Override
 	public String toString() {
 		return "Email [correo=" + correo + "]";
