@@ -40,4 +40,23 @@ public class Email {
 	public String toString() {
 		return "Email [correo=" + correo + "]";
 	}
+	
+	public static boolean validarCorreoAlMenosDosNumeros_retornaTrue(String correo) {
+		String regex = ".*\\d.*\\d.*";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(correo);
+		System.out.println(matcher.matches());
+		return matcher.matches();
+	}
+	
+	public static boolean validarCorreoEmpieceConNumero_retornaTrue(String correo) {
+		String regex = "^\\d";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(correo);
+		System.out.println(matcher.matches());
+		return matcher.find();
+	}
+	
+	
+	
 }
