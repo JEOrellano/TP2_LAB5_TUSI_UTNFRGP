@@ -36,6 +36,14 @@ public class Email {
         Matcher matcher = pattern.matcher(correo);
         return matcher.matches();
     }
+    
+    public boolean validarUnCaracterAlfanumerico() {
+        String regex = ".*[a-zA-Z0-9].*@.*";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(correo);
+        return matcher.matches();
+    }
+    
 	@Override
 	public String toString() {
 		return "Email [correo=" + correo + "]";
